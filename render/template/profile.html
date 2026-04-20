@@ -1,0 +1,75 @@
+<div class="flex min-h-screen items-center justify-center bg-slate-100">
+  <div class="group relative w-full max-w-md overflow-hidden h-96 border border-white/60 bg-white/80 backdrop-blur-xl transition duration-300 shadow-[0_30px_80px_-20px_rgba(244,114,182,0.28)]">
+    
+    <!-- 顶部渐变背景 -->
+    <div class="h-28 bg-gradient-to-r from-pink-400 via-rose-400 to-orange-300"></div>
+
+    <!-- 内容区域 -->
+    <div class="relative px-6 pb-6">
+      <!-- 头像 -->
+      <div class="-mt-12 mb-4 flex items-end justify-between">
+        <img
+          src="{{ .Avatar }}"
+          alt="{{ .Username }}"
+          class="h-24 w-24 rounded-2xl border-4 border-white object-cover shadow-lg ring-1 ring-black/5"
+        />
+
+        <!-- 状态 -->
+        <span class="inline-flex shrink-0 items-center gap-1 rounded-full border border-rose-200 bg-rose-500/10 px-3 py-1 font-medium text-xs text-rose-500 shadow-sm">
+          <span>🩸</span>
+          <span>魔法期</span>
+        </span>
+      </div>
+
+      <!-- 姓名 + UID -->
+      <div class="mb-5">
+        <div class="flex items-center gap-2">
+          <h2 class="text-2xl font-bold tracking-tight text-slate-900">
+            {{ .Username }}
+          </h2>
+          <span class="rounded-full bg-pink-500/10 px-2 py-0.5 text-[11px] font-semibold text-pink-500">
+            UP
+          </span>
+        </div>
+        <p class="mt-1 text-sm text-slate-500">
+          UID: {{ .UID }}
+        </p>
+      </div>
+
+      <!-- 数据区 -->
+      <div class="grid grid-cols-2 gap-3">
+        <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-pink-50/60">
+          <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
+            粉丝数
+          </p>
+          <p class="mt-2 text-2xl font-bold text-slate-900">
+            {{ .LiveFansCount }}
+          </p>
+          <p class="mt-1 text-xs text-slate-500">
+            Fans
+          </p>
+        </div>
+
+        <div class="rounded-2xl  px-4 py-4 ring-1 ring-slate-200/70 transition bg-rose-50/60">
+          <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
+            舰长数
+          </p>
+          <p class="mt-2 text-2xl font-bold text-slate-900">
+            {{ .NumberOfGuards }}
+          </p>
+          <p class="mt-1 text-xs text-slate-500">
+            Guards
+          </p>
+        </div>
+      </div>
+
+      <!-- 底部装饰 -->
+      <div class="mt-5 flex items-center justify-between text-xs text-slate-400">
+        <span>Profile Card</span>
+        <span class="rounded-full bg-slate-100 px-2.5 py-1 text-slate-500">
+          {{ .Username }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

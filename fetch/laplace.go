@@ -50,6 +50,7 @@ type VtuberUser struct {
 	Period         string `json:"period,omitempty"`
 	CurrentDay     int    `json:"currentDay,omitempty"`
 	NumberOfGuards int    `json:"numberOfGuards,omitempty"`
+	Follower       int    `json:"followers,omitempty"`
 }
 
 type VtuberGuildInfo struct {
@@ -160,6 +161,10 @@ func GetVtuberFertility(uid int64) (VtuberUser, error) {
 	user.NumberOfGuards, err = GetNumberOfGuards(uid)
 	if err != nil {
 		return empty, fmt.Errorf("Failed to get number of guards: %w", err)
+	}
+	user.Follower, err = GetVtuberFans(uid)
+	if err != nil {
+		return empty, fmt.Errorf("Failed to get followers: %w", err)
 	}
 	return user, nil
 }

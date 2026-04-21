@@ -10,6 +10,15 @@
 - [ ] 主播礼物流水排名
 - [ ] 主播个人信息展示
 
+## 样式展示
+
+<details>
+<summary>个人资料卡片（点击展开）</summary>
+
+![个人资料卡片预览](asserts/vtuber-profile-1027569533.png)
+
+</details>
+
 ## 部署方式
 
 ...

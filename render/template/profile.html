@@ -2,8 +2,19 @@
   <div class="group relative w-full max-w-md overflow-hidden h-96 border border-white/60 bg-white/80 backdrop-blur-xl transition duration-300 shadow-[0_30px_80px_-20px_rgba(244,114,182,0.28)]">
     
     <!-- 顶部渐变背景 -->
-    <div class="h-28 bg-gradient-to-r from-pink-400 via-rose-400 to-orange-300"></div>
-
+    {{if eq .Period "魔法期"}}
+    <div class="h-28 bg-gradient-to-r from-pink-400 via-rose-400 to-red-400"></div>
+    {{else if eq .Period "易孕期"}}
+    <div class="h-28 bg-gradient-to-r from-pink-400 via-rose-400 to-red-400"></div>
+    {{else if eq .Period "排卵日"}}
+    <div class="h-28 bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-300"></div>
+    {{else if eq .Period "安全期"}}
+    <div class="h-28 bg-gradient-to-r from-emerald-400 via-green-400 to-lime-300"></div>
+    {{else if eq .Period "即将魔法期"}}
+    <div class="h-28 bg-gradient-to-r from-emerald-400 via-green-400 to-lime-300"></div>
+    {{else}}
+    <div class="h-28 bg-gradient-to-r from-emerald-400 via-green-400 to-lime-300"></div>
+    {{end}}
     <!-- 内容区域 -->
     <div class="relative px-6 pb-6">
       <!-- 头像 -->
@@ -14,11 +25,28 @@
           class="h-24 w-24 rounded-2xl border-4 border-white object-cover shadow-lg ring-1 ring-black/5"
         />
 
-        <!-- 状态 -->
+        <!-- 状态：安全期 / 即将魔法期 / 空或未识别 Period 均显示为「安全期」 -->
+        {{if eq .Period "魔法期"}}
         <span class="inline-flex shrink-0 items-center gap-1 rounded-full border border-rose-200 bg-rose-500/10 px-3 py-1 font-medium text-xs text-rose-500 shadow-sm">
           <span>🩸</span>
           <span>魔法期</span>
         </span>
+        {{else if eq .Period "易孕期"}}
+        <span class="inline-flex shrink-0 items-center gap-1 rounded-full border border-pink-200 bg-pink-500/10 px-3 py-1 font-medium text-xs text-pink-500 shadow-sm">
+          <span>🌸</span>
+          <span>易孕期</span>
+        </span>
+        {{else if eq .Period "排卵日"}}
+        <span class="inline-flex shrink-0 items-center gap-1 rounded-full border border-amber-200 bg-amber-500/10 px-3 py-1 font-medium text-xs text-amber-600 shadow-sm">
+          <span>🥚</span>
+          <span>排卵期</span>
+        </span>
+        {{else}}
+        <span class="inline-flex shrink-0 items-center gap-1 rounded-full border border-emerald-200 bg-emerald-500/10 px-3 py-1 font-medium text-xs text-emerald-600 shadow-sm">
+          <span>💚</span>
+          <span>安全期</span>
+        </span>
+        {{end}}
       </div>
 
       <!-- 姓名 + UID -->
@@ -38,7 +66,13 @@
 
       <!-- 数据区 -->
       <div class="grid grid-cols-2 gap-3">
+        {{if eq .Period "安全期"}}
+        <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-lime-50/60">
+        {{else if eq .Period "即将魔法期"}}
+        <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-lime-50/60">
+        {{else}}
         <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-pink-50/60">
+        {{end}}
           <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
             粉丝数
           </p>
@@ -50,7 +84,13 @@
           </p>
         </div>
 
-        <div class="rounded-2xl  px-4 py-4 ring-1 ring-slate-200/70 transition bg-rose-50/60">
+        {{if eq .Period "安全期"}}
+        <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-lime-50/60">
+        {{else if eq .Period "即将魔法期"}}
+        <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-lime-50/60">
+        {{else}}
+        <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-rose-50/60">
+        {{end}}
           <p class="text-xs font-medium uppercase tracking-wide text-slate-400">
             舰长数
           </p>

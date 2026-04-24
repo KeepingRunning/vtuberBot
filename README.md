@@ -21,6 +21,9 @@
 
 ## 部署方式
 
-...
+Napcat设置websocket客户端，设置url：ws://host.docker.internal:8080/onebot/v11/ws
+然后启动go run ./cmd/main.go 命令行显示已连接说明连接成功
+
+给qqbot输入/profile <uid>返回主播对应的profile
 
 ## 架构设计

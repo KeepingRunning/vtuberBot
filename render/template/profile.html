@@ -67,9 +67,11 @@
       <!-- 数据区 -->
       <div class="grid grid-cols-2 gap-3">
         {{if eq .Period "安全期"}}
-        <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-lime-50/60">
+        <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-emerald-50/60">
         {{else if eq .Period "即将魔法期"}}
-        <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-lime-50/60">
+        <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-emerald-50/60">
+        {{else if eq .Period "排卵日"}}
+        <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-orange-50/60">
         {{else}}
         <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-pink-50/60">
         {{end}}
@@ -88,6 +90,8 @@
         <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-lime-50/60">
         {{else if eq .Period "即将魔法期"}}
         <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-lime-50/60">
+        {{else if eq .Period "排卵日"}}
+        <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-yellow-50/60">
         {{else}}
         <div class="rounded-2xl px-4 py-4 ring-1 ring-slate-200/70 transition bg-rose-50/60">
         {{end}}

@@ -8,14 +8,17 @@
 - [ ] 取消订阅主播
 - [ ] 查询正在开播主播
 - [ ] 主播礼物流水排名
-- [ ] 主播个人信息展示
+- [x] 主播个人信息展示
 
 ## 样式展示
 
 <details>
 <summary>个人资料卡片（点击展开）</summary>
 
-![个人资料卡片预览](asserts/vtuber-profile-1027569533.png)
+![个人资料卡片](asserts/vtuber-profile-1027569533.png)
+![个人资料卡片](asserts/vtuber-profile-129005031.png)
+![个人资料卡片](asserts/vtuber-profile-1696219248.png)
+![个人资料卡片](asserts/vtuber-profile-575671104.png)
 
 </details>
 
